@@ -14,6 +14,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val addButton = findViewById<Button>(R.id.addButton)
+        val subtractButton = findViewById<Button>(R.id.subtractButton)
+        val multiplyButton = findViewById<Button>(R.id.multiplyButton)
+        val divideButton = findViewById<Button>(R.id.divideButton)
         val fieldOne = findViewById<EditText>(R.id.firstNumEditText)
         val fieldTwo = findViewById<EditText>(R.id.secondNumEditText)
         val resultTextView = findViewById<TextView>(R.id.resultTextView)
@@ -24,6 +27,30 @@ class MainActivity : AppCompatActivity() {
             fieldOne.onEditorAction(EditorInfo.IME_ACTION_DONE)
             fieldTwo.onEditorAction(EditorInfo.IME_ACTION_DONE)
             resultTextView.text = (numOne+numTwo).toString()
+        }
+
+        subtractButton.setOnClickListener {
+            val numOne = fieldOne.text.toString().toInt()
+            val numTwo = fieldTwo.text.toString().toInt()
+            fieldOne.onEditorAction(EditorInfo.IME_ACTION_DONE)
+            fieldTwo.onEditorAction(EditorInfo.IME_ACTION_DONE)
+            resultTextView.text = (numOne-numTwo).toString()
+        }
+
+        multiplyButton.setOnClickListener {
+            val numOne = fieldOne.text.toString().toInt()
+            val numTwo = fieldTwo.text.toString().toInt()
+            fieldOne.onEditorAction(EditorInfo.IME_ACTION_DONE)
+            fieldTwo.onEditorAction(EditorInfo.IME_ACTION_DONE)
+            resultTextView.text = (numOne*numTwo).toString()
+        }
+
+        divideButton.setOnClickListener {
+            val numOne = fieldOne.text.toString().toInt()
+            val numTwo = fieldTwo.text.toString().toInt()
+            fieldOne.onEditorAction(EditorInfo.IME_ACTION_DONE)
+            fieldTwo.onEditorAction(EditorInfo.IME_ACTION_DONE)
+            resultTextView.text = (numOne/numTwo).toString()
         }
     }
 }
